@@ -31,9 +31,9 @@ public class LeituraEscrita {
 				verifica = false;
 			}
 		}
+		bw.close();
 		br.close();
 		rea.close();
 		fis.close();
-		bw.close();
 	}
 }
