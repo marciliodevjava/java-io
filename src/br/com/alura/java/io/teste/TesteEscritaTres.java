@@ -24,13 +24,17 @@ public class TesteEscritaTres {
 		fw.write(sistema);
 		fw.write("esse cillum dolore eu fugiat nulla pariatur. Excepteur sint");
 		fw.close();
+		
 	}
 	
 	public static String verificaOs(String os) {
+		
 		if(os.contains("win")) {
 			return os = "\r\n";
 		} else {
 			return os = "\n";
 		}
+		
 	}
+	
 }
