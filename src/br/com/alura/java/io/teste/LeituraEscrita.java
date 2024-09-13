@@ -12,6 +12,8 @@ public class LeituraEscrita {
 
 	public static void main(String[] args) throws IOException {
 		
+		Boolean verifica = true;
+		
 		FileInputStream fis = new FileInputStream("leitura.txt");
 		Reader rea = new InputStreamReader(fis);
 		BufferedReader br = new BufferedReader(rea);
@@ -20,11 +22,14 @@ public class LeituraEscrita {
 		BufferedWriter bw = new BufferedWriter(new FileWriter(path));
 		
 		String leitura = br.readLine();
-		while(leitura != null) {
+		while(verifica) {
 			System.out.println(leitura);
 			bw.write(leitura);
     		bw.newLine();
 			leitura = br.readLine();
+			if(leitura == null || leitura == "") {
+				verifica = false;
+			}
 		}
 		br.close();
 		rea.close();
